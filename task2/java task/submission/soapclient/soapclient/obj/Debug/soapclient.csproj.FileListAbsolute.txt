@@ -1,0 +1,6 @@
+c:\users\simba\documents\visual studio 2013\Projects\soapclient\soapclient\bin\Debug\soapclient.exe.config
+c:\users\simba\documents\visual studio 2013\Projects\soapclient\soapclient\bin\Debug\soapclient.exe
+c:\users\simba\documents\visual studio 2013\Projects\soapclient\soapclient\bin\Debug\soapclient.pdb
+c:\users\simba\documents\visual studio 2013\Projects\soapclient\soapclient\obj\Debug\soapclient.csprojResolveAssemblyReference.cache
+c:\users\simba\documents\visual studio 2013\Projects\soapclient\soapclient\obj\Debug\soapclient.exe
+c:\users\simba\documents\visual studio 2013\Projects\soapclient\soapclient\obj\Debug\soapclient.pdb

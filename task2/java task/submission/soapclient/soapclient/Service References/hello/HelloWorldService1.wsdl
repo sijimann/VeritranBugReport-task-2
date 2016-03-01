@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://secure.zss.co.zw/vportal/integration/HelloWorldService" name="HelloWorldService" targetNamespace="http://secure.zss.co.zw/vportal/integration/HelloWorldService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://secure.zss.co.zw/vportal/integration/HelloWorldService" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://secure.zss.co.zw/vportal/integration/HelloWorldService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ProcessRequest" type="tns:ProcessRequest" />
+      <xs:element name="ProcessRequestResponse" type="tns:ProcessRequestResponse" />
+      <xs:element name="Request" type="tns:request" />
+      <xs:element name="Response" type="tns:response" />
+      <xs:complexType name="ProcessRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Requst" type="tns:request" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="request">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="age" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" type="xs:string" />
+          <xs:element minOccurs="0" name="lastName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProcessRequestResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Response" type="tns:response" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:string" />
+          <xs:element name="funny" type="xs:boolean" />
+          <xs:element minOccurs="0" name="id" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="UnauthenticatedException" type="tns:UnauthenticatedException" />
+      <xs:complexType name="UnauthenticatedException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessRequestResponse">
+    <wsdl:part name="parameters" element="ns1:ProcessRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnauthenticatedException">
+    <wsdl:part name="UnauthenticatedException" element="ns1:UnauthenticatedException" />
+  </wsdl:message>
+  <wsdl:message name="ProcessRequest">
+    <wsdl:part name="parameters" element="ns1:ProcessRequest" />
+  </wsdl:message>
+  <wsdl:portType name="HelloWorldService">
+    <wsdl:operation name="ProcessRequest">
+      <wsdl:input name="ProcessRequest" message="ns1:ProcessRequest" />
+      <wsdl:output name="ProcessRequestResponse" message="ns1:ProcessRequestResponse" />
+      <wsdl:fault name="UnauthenticatedException" message="ns1:UnauthenticatedException" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
